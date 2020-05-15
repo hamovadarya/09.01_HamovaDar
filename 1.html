@@ -8,15 +8,15 @@
 <body>
     <script>
         //1 
-    let getProfitableDeposit = function (startSum, depositLength, yearPercent, capitalisedPersent) {
-    let simpleDeposit = calculateDeposit(startSum, yearPercent, depositLength, false);
-    let complexDeposit = calculateDeposit(startSum, capitalisedPersent, depositLength, true);
-    if (complexDeposit > simpleDeposit) {
-         return 'Выбирай капитализацию. Заработаешь ' + complexDeposit;
-   } else {
-        return 'Выбирай обычный вклад. Заработаешь ' + simpleDeposit;
-}
-}
+        let checkVehicle = function (tiries, weight) {
+            let mes;
+            if(tiries === 2 && weight < 100) {
+                mes = 'Парковка разрешена';
+            }else {
+                mes = 'Вам здесь не место! Мяу!';
+                }
+            return mes;
+            };
 //2
 function calculatePressure(r, h, g = 9.8) {
 return Math.round(r*g*h);
@@ -41,7 +41,7 @@ let calculate=function(firstNumber, secondNumber, operator) {
 //4
 const getDiet = (food, limit) => {
     let total = 0;
-for (var i = 0; i <= food.length; i++) {
+for (let i = 0; i <= food.length; i++) {
     if (total > limit) {
         return i - 1;
 }
@@ -52,7 +52,7 @@ for (var i = 0; i <= food.length; i++) {
 //5
 let getDocumentsNumbers = function (nameDoc, years) {
 let j = 0;
-for (var i = 0; i < nameDoc.length; i++) {
+for (let i = 0; i < nameDoc.length; i++) {
     let ye = nameDoc[i];
     let year = ye.indexOf(years, 4);
     if (year > -1) {
