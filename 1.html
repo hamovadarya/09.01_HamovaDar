@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamova</title>
+</head>
+<body>
+    <script>
+        //1 
+    let getProfitableDeposit = function (startSum, depositLength, yearPercent, capitalisedPersent) {
+    let simpleDeposit = calculateDeposit(startSum, yearPercent, depositLength, false);
+    let complexDeposit = calculateDeposit(startSum, capitalisedPersent, depositLength, true);
+    if (complexDeposit > simpleDeposit) {
+         return 'Выбирай капитализацию. Заработаешь ' + complexDeposit;
+   } else {
+        return 'Выбирай обычный вклад. Заработаешь ' + simpleDeposit;
+}
+}
+//2
+function calculatePressure(r, h, g = 9.8) {
+return Math.round(r*g*h);
+}
+
+//3
+let calculate=function(firstNumber, secondNumber, operator) {
+    if(operator==='+') {
+        return parseInt(firstNumber,10)+parseInt(secondNumber,10);
+                }
+    if(operator==='-') {
+        return parseInt(firstNumber,10)-parseInt(secondNumber,10);
+}
+    if(operator==='*') {
+        return parseInt(firstNumber,10)*secondNumber,10;
+}
+    if(operator==='/') {
+        return parseInt(firstNumber,10)/parseInt(secondNumber,10);
+}
+}
+
+//4
+const getDiet = (food, limit) => {
+    let total = 0;
+for (var i = 0; i <= food.length; i++) {
+    if (total > limit) {
+        return i - 1;
+}
+    total += food[i];
+}
+}
+
+//5
+let getDocumentsNumbers = function (nameDoc, years) {
+let j = 0;
+for (var i = 0; i < nameDoc.length; i++) {
+    let ye = nameDoc[i];
+    let year = ye.indexOf(years, 4);
+    if (year > -1) {
+        j = j + 1;
+}
+}
+return j;
+}
+
+//6
+
+let incomeTax = 13;
+let contributions = 30;
+let calculateExpenses = function (netSalary) {
+    let dirtySalary = netSalary * (incomeTax/(100-incomeTax));
+dirtySalary += netSalary;
+let costSalary = dirtySalary + (dirtySalary/100 * contributions);
+return Math.round(costSalary);
+}
+
+//7
+let getYears = function(g1,g2,s) {
+    let mas = []
+    let h1=0
+    let f=g1
+while (f<=g2){
+    f=String(f)
+        for (i=0; i<4; i++){
+            h1=h1+parseInt(f[i], 10)
+}
+f=parseInt(f, 10)
+    if (h1==s){mas.push(f)}
+        f++
+        h1=0
+}
+return mas
+}
+
+//8
+ 
+let getDayOfWeek = function(firstDay, day) {
+
+    let days = ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
+
+day += days.indexOf(firstDay)-1;
+s = days[day % 7]
+return s;
+}
+
+
+//9
+let calculateRoots = function(a,b,c){
+if ((b * b - 4 * a * c)<0){return 'Корней нет'}
+else if ((b * b - 4 * a * c)==0){
+return ('Корень равен ' + -b / (2 * a))
+}
+else if ((b * b - 4 * a * c)>0){
+return ('Первый корень равен ' +(-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a) + ', второй корень равен ' + (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a))
+}
+}
+
+//10
+let calculateDeposit = function (startSum, percent, monthCount, capitalisacia) {
+    let percentInMonth = percent / 12;
+    let result = 0;
+if(!capitalisacia){
+    result = (monthCount * percentInMonth)/100 * startSum;
+    result += startSum;
+}
+else{
+    for(var i = 1; i <= monthCount; i++){
+        startSum = (startSum * percentInMonth) / 100 + startSum;
+        result = startSum;
+}
+}
+return Math.floor(result);
+};
+    </script>
+</body>
+</html>
